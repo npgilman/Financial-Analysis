@@ -1,7 +1,15 @@
 package gilman;
 
-public class LandingPage {
-	public static void main(String[] args) {
-		System.out.println("Hi");
+import javax.swing.JPanel;
+
+public class LandingPage extends JPanel {
+	
+	private static final long serialVersionUID = 1L;
+
+	public LandingPage() {
+		super();
+		
 	}
+	
+	
 }
