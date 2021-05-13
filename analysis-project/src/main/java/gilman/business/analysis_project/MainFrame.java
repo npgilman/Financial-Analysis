@@ -1,4 +1,4 @@
-package gilman;
+package gilman.business.analysis_project;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
