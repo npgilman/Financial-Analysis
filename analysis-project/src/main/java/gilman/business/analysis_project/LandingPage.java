@@ -1,9 +1,16 @@
 package gilman.business.analysis_project;
 
 import java.awt.Button;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
@@ -11,11 +18,28 @@ public class LandingPage extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	
+	public StockPanel stockChart;
+	
+	public StockComboBox stockSelector;
 	
 	public LandingPage() {
 		super();
-		add(new TempButton("Temporary Button"));
-		add(new StockComboBox());
+		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		this.stockSelector = new StockComboBox();
+		this.stockChart = new StockPanel((String) stockSelector.getSelectedItem());
+		add(stockSelector);
+		add(stockChart);
+		
+		stockSelector.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JComboBox<String> jb = (JComboBox<String>)e.getSource();
+				String activeTicker = (String)jb.getSelectedItem();
+				stockChart.updateStock(activeTicker);
+			}
+			
+		});
 		
 		
 	}

@@ -16,16 +16,17 @@ public class MainFrame extends JFrame {
 	
 	public MainFrame() {
 		super(HEADER);
-		setBounds((250), (150), WIDTH, HEIGHT);
 		setActivePanel(new LandingPage());
 		add(ActivePanel);
+		
+		pack();
+		setVisible(true);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}
 	
 	public static void main(String[] args) {
-		MainFrame testFrame = new MainFrame();
-		testFrame.setVisible(true);
-		
+		MainFrame testFrame = new MainFrame();		
 	}
 
 	public JPanel getActivePanel() {
