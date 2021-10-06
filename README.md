@@ -1,3 +1,3 @@
-# Gilman Analysis Inc
- The start of an era. 
+# Gilman Analysis
+Practicing visualizing financial information in a digestible format.
  
